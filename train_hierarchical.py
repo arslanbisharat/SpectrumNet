@@ -250,12 +250,7 @@ def main():
     print(f"Embedding file: {args.embedding_file}")
     print(f"Fold: {args.fold}")
     print(f"Output directory: {args.output_dir}")
-    print(f"Key advantages:")
-    print(f"  No 98% information loss from comment truncation")
-    print(f"  Each comment gets full 512 tokens")
-    print(f"  Dynamic previous comment selection")
-    print(f"  Proper hierarchical relationship preservation")
-    print("=" * 60)
+
 
     model, results = train_hierarchical_single_fold(
         config, args.fold, args.embedding_file, args.output_dir
@@ -270,9 +265,6 @@ def main():
     print(f"Best Macro F1: {best_metrics['macro_avg_f1']:.4f}")
     print(f"Best Accuracy: {best_metrics['accuracy']:.4f}")
     print(f"Best Balanced Accuracy: {best_metrics['balanced_accuracy']:.4f}")
-
-    print(f"\nHierarchical approach preserves {100}% of comment information!")
-    print(f"   vs traditional concatenation losing ~98% due to truncation")
 
 
 if __name__ == "__main__":
